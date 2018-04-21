@@ -11,5 +11,5 @@ config_version=3
 [application]
 
 config/name="LDJ2018"
-run/main_scene="res://scripts/wall.tscn"
+run/main_scene="res://scenes/Main.tscn"
 config/icon="res://icon.png"
