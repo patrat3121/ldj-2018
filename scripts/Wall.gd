@@ -14,3 +14,6 @@ func _ready():
 func change_color(color):
 	$sprite.modulate = colors.COLORS[color]
 	current_color = color
+	
+func hit_by(body):
+	change_color(body.color)
