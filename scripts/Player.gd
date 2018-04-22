@@ -17,6 +17,7 @@ const SLIDE_STOP_VELOCITY = 1.0 # one pixel/second
 const SLIDE_STOP_MIN_TRAVEL = 1.0 # one pixel
 
 var velocity = Vector2()
+var looks_right = true	#orientation player is facing. Also, code is just looking right so far
 var on_air_time = 100
 var time_since_last_shot = 0.0
 var jumping = false
@@ -77,6 +78,18 @@ func _physics_process(delta):
 	time_since_last_shot += delta
 	if shoot and time_since_last_shot>SHOOT_LATENCY:
 		# Can't shoot continuously, must wait SHOOT_LATENCY seconds first
-		time_since_last_shot = fmod(time_since_last_shot,SHOOT_LATENCY)
+		shoot()
+
+func _process():
+	$AnimatedSprite.flip_h = looks_right
+	$AnimatedSprite.play()
+
+func shoot():
 		print("Shot projectile")
+		time_since_last_shot = fmod(time_since_last_shot,SHOOT_LATENCY)
 		#TODO: Actually shoot projectile
+		var projectile = load("res://scenes/Projectile.tscn")
+		var projectile_instance = projectile.instance()
+		#projectile_instance.set_position
+		add_child(projectile_instance)
+		$AnimatedSprite.animation = "shooting"
