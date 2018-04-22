@@ -3,7 +3,7 @@ extends KinematicBody2D
 var Colors = preload("res://scripts/Colors.gd")
 
 export (int) var speed = 125
-export (Color) var color = Color(1,0,0)
+export var color = "red"
 
 const GRAVITY = 200
 
@@ -14,12 +14,13 @@ var health = StackHealthBar.new()
 func _ready():
 	pass
 	
-func start(pos, col, health):
+func start(pos, health):
 	position = pos
-	$Sprite.modulate = Colors.COLORS[col]
-	collision_layer = 1 | Colors.COLORS_LAYER[col]
+	color = health[0].name
+	$Sprite.modulate = Colors.COLORS[color]
+	collision_layer = 1 | Colors.COLORS_LAYER[color]
 	self.health.init(health)
-	$Node2D/HealthBar.setHealth(self.health.health)
+	$Node2D/HPBar/HP.setHealth(self.health.health)
 	
 func _physics_process(delta):
 	velocity.y += delta * GRAVITY 

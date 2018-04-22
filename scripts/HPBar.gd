@@ -1,4 +1,4 @@
-extends Container
+extends TextureRect
 
 const Colors = preload("res://scripts/Colors.gd")
 
@@ -14,9 +14,7 @@ func setHealth(health):
 	self.health = health
 	totalHealth = total
 	
-	tileSize = floor(150 / totalHealth)
-	
-	print(rect_position)
+	tileSize = ceil(rect_size.x/ totalHealth)
 	
 func _draw():
 	draw_rect(
