@@ -20,7 +20,7 @@ func start(pos, health):
 	$Sprite.modulate = Colors.COLORS[color]
 	collision_layer = 1 | Colors.COLORS_LAYER[color]
 	self.health.init(health)
-	$Node2D/HPBar/HP.setHealth(self.health.health)
+	$Node2D/HPBar/HP.initHealth(self.health.health)
 	
 func _physics_process(delta):
 	velocity.y += delta * GRAVITY 

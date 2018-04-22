@@ -5,16 +5,29 @@ const Colors = preload("res://scripts/Colors.gd")
 var health = []
 var totalHealth = 0
 var tileSize = 0
+var initHealth = 0
+	
+func initHealth(health):
+	_setHealth(health, true)
 	
 func setHealth(health):
+	_setHealth(health, false)	
+	
+func _setHealth(health, init):
 	var total = 0
 	for color in health:
 		total += color.value
 		
+	if init == true:
+		initHealth = total
+	
 	self.health = health
 	totalHealth = total
 	
-	tileSize = ceil(rect_size.x/ totalHealth)
+	if totalHealth >= initHealth:
+		tileSize = ceil(rect_size.x / totalHealth)
+	else:
+		tileSize = ceil(rect_size.x / initHealth) 
 	
 	update()
 	
