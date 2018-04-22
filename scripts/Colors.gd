@@ -18,6 +18,15 @@ const CONTAINED = {
 	"orange" : ["red","yellow"]
 }
 
+const COLORS_LAYER = {
+	"red" : 2,
+	"blue": 4, 
+	"yellow": 8,
+	"green" : 16,
+	"purple" : 32,
+	"orange" : 64
+}
+
 static func is_contained(one,two):
 	return CONTAINED[one].has(two)
 	
