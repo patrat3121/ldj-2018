@@ -24,7 +24,9 @@ var time_since_last_shot = 0.0
 var jumping = false
 var alive = true
 
+var shot_color = "red"
 var prev_jump_pressed = false
+var colors = preload("res://scripts/Colors.gd")
 
 func _physics_process(delta):
 	if !alive:
@@ -38,6 +40,9 @@ func _physics_process(delta):
 	var jump = Input.is_action_pressed("jump")
 	var shoot = Input.is_action_pressed("shoot")
 	var suicide = Input.is_action_pressed("suicide")
+	var chose_red = Input.is_action_just_pressed("load_red")
+	var chose_blue = Input.is_action_just_pressed("load_blue")
+	var chose_yellow = Input.is_action_just_pressed("load_yellow")
 	
 	var stop = true
 	
@@ -90,6 +95,13 @@ func _physics_process(delta):
 	if shoot and time_since_last_shot>SHOOT_LATENCY:
 		# Can't shoot continuously, must wait SHOOT_LATENCY seconds first
 		shoot()
+		
+	if chose_red:
+		shot_color = "red"
+	if chose_blue:
+		shot_color = "blue"
+	if chose_yellow:
+		shot_color = "yellow"
 
 func _process(delta):
 	if alive:
@@ -121,8 +133,9 @@ func shoot():
 	print(projectile_instance.rotation_degrees)
 	get_parent().add_child(projectile_instance)
 	projectile_instance.position = Vector2(self.position.x,self.position.y)
-	projectile_instance.color = "green"
 	projectile_instance.speed = 50
+	projectile_instance.color = shot_color
+	projectile_instance.modulate = colors.COLORS[shot_color]
 	projectile_instance.damage = 1
 	projectile_instance.show()
 	$AnimatedSprite.animation = "shooting"

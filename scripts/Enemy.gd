@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 var Colors = preload("res://scripts/Colors.gd")
 
-export (int) var speed = 125
+export (int) var speed = 0
 export var color = "red"
 
 const GRAVITY = 200
