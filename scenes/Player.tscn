@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://assets/images/prisma/idle/PrismaIdle-2.png" type="Texture" id=2]
@@ -27,6 +27,8 @@
 [ext_resource path="res://assets/images/prisma/shooting/PrismaShooting-4.png" type="Texture" id=25]
 [ext_resource path="res://assets/images/prisma/shooting/PrismaShooting-5.png" type="Texture" id=26]
 [ext_resource path="res://assets/images/prisma/shooting/PrismaShooting-6.png" type="Texture" id=27]
+[ext_resource path="res://assets/images/prisma/death/PrismaDeath-1.png" type="Texture" id=28]
+[ext_resource path="res://assets/images/prisma/death/PrismaDeath-2.png" type="Texture" id=29]
 
 [sub_resource type="SpriteFrames" id=2]
 
@@ -50,6 +52,11 @@ animations = [ {
 "loop": false,
 "name": "shooting",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 28 ), ExtResource( 29 ) ],
+"loop": false,
+"name": "death",
+"speed": 2.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=3]

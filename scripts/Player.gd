@@ -21,10 +21,14 @@ var looks_right = true	#orientation player is facing. Also, code is just looking
 var on_air_time = 100
 var time_since_last_shot = 0.0
 var jumping = false
+var alive = true
 
 var prev_jump_pressed = false
 
 func _physics_process(delta):
+	if !alive:
+		return
+	
 	# Create forces
 	var force = Vector2(0, GRAVITY)
 	
@@ -32,6 +36,7 @@ func _physics_process(delta):
 	var walk_right = Input.is_action_pressed("move_right")
 	var jump = Input.is_action_pressed("jump")
 	var shoot = Input.is_action_pressed("shoot")
+	var suicide = Input.is_action_pressed("suicide")
 	
 	var stop = true
 	
@@ -55,6 +60,9 @@ func _physics_process(delta):
 			vlen = 0
 		
 		velocity.x = vlen * vsign
+	
+	if (suicide):
+		alive = false
 	
 	# Integrate forces to velocity
 	velocity += force * delta
@@ -84,14 +92,15 @@ func _physics_process(delta):
 
 func _process(delta):
 	#if abs(velocity.y)>10:
-	if !is_on_floor():
-		$AnimatedSprite.animation = "jumping"
-	elif velocity.x==0:
-		$AnimatedSprite.animation = "idle"
-	elif $AnimatedSprite.animation!="running":
-		$AnimatedSprite.animation = "running"
-	print($AnimatedSprite.animation)
-	print("\n")
+	if alive:
+		if !is_on_floor():
+			$AnimatedSprite.animation = "jumping"
+		elif velocity.x==0:
+			$AnimatedSprite.animation = "idle"
+		elif $AnimatedSprite.animation!="running":
+			$AnimatedSprite.animation = "running"
+	elif $AnimatedSprite.animation != "death":
+		$AnimatedSprite.animation = "death"
 	
 	
 	$AnimatedSprite.flip_h = !looks_right
@@ -101,14 +110,14 @@ func run():
 	pass
 
 func shoot():
-		print("Shot projectile")
-		time_since_last_shot = fmod(time_since_last_shot,SHOOT_LATENCY)
-		#TODO: Actually shoot projectile
-		var projectile = load("res://scenes/Projectile.tscn")
-		var projectile_instance = projectile.instance()
-		#projectile_instance.set_position
-		add_child(projectile_instance)
-		$AnimatedSprite.animation = "shooting"
+	print("Shot projectile")
+	time_since_last_shot = fmod(time_since_last_shot,SHOOT_LATENCY)
+	#TODO: Actually shoot projectile
+	var projectile = load("res://scenes/Projectile.tscn")
+	var projectile_instance = projectile.instance()
+	#projectile_instance.set_position
+	add_child(projectile_instance)
+	$AnimatedSprite.animation = "shooting"
 		
 func hit_by(body):
 	pass
