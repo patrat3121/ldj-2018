@@ -36,10 +36,12 @@ func _physics_process(delta):
 	var stop = true
 	
 	if walk_left:
+		looks_right = false
 		if velocity.x <= WALK_MIN_SPEED and velocity.x > -WALK_MAX_SPEED:
 			force.x -= WALK_FORCE
 			stop = false
 	elif walk_right:
+		looks_right = true
 		if velocity.x >= -WALK_MIN_SPEED and velocity.x < WALK_MAX_SPEED:
 			force.x += WALK_FORCE
 			stop = false
@@ -80,9 +82,23 @@ func _physics_process(delta):
 		# Can't shoot continuously, must wait SHOOT_LATENCY seconds first
 		shoot()
 
-func _process():
-	$AnimatedSprite.flip_h = looks_right
+func _process(delta):
+	#if abs(velocity.y)>10:
+	if !is_on_floor():
+		$AnimatedSprite.animation = "jumping"
+	elif velocity.x==0:
+		$AnimatedSprite.animation = "idle"
+	elif $AnimatedSprite.animation!="running":
+		$AnimatedSprite.animation = "running"
+	print($AnimatedSprite.animation)
+	print("\n")
+	
+	
+	$AnimatedSprite.flip_h = !looks_right
 	$AnimatedSprite.play()
+
+func run():
+	pass
 
 func shoot():
 		print("Shot projectile")
@@ -93,3 +109,6 @@ func shoot():
 		#projectile_instance.set_position
 		add_child(projectile_instance)
 		$AnimatedSprite.animation = "shooting"
+		
+func hit_by(body):
+	pass

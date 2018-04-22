@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://assets/images/prisma/idle/PrismaIdle-2.png" type="Texture" id=2]
@@ -18,12 +18,15 @@
 [ext_resource path="res://assets/images/prisma/running/PrismaRunning-7.png" type="Texture" id=16]
 [ext_resource path="res://assets/images/prisma/running/PrismaRunning-8.png" type="Texture" id=17]
 [ext_resource path="res://assets/images/prisma/running/PrismaRunning-9.png" type="Texture" id=18]
-[ext_resource path="res://assets/images/prisma/shooting/PrismaShooting-1.png" type="Texture" id=19]
-[ext_resource path="res://assets/images/prisma/shooting/PrismaShooting-2.png" type="Texture" id=20]
-[ext_resource path="res://assets/images/prisma/shooting/PrismaShooting-3.png" type="Texture" id=21]
-[ext_resource path="res://assets/images/prisma/shooting/PrismaShooting-4.png" type="Texture" id=22]
-[ext_resource path="res://assets/images/prisma/shooting/PrismaShooting-5.png" type="Texture" id=23]
-[ext_resource path="res://assets/images/prisma/shooting/PrismaShooting-6.png" type="Texture" id=24]
+[ext_resource path="res://assets/images/prisma/jumping/PrismaJumping-1.png" type="Texture" id=19]
+[ext_resource path="res://assets/images/prisma/jumping/PrismaJumping-2.png" type="Texture" id=20]
+[ext_resource path="res://assets/images/prisma/jumping/PrismaJumping-3.png" type="Texture" id=21]
+[ext_resource path="res://assets/images/prisma/shooting/PrismaShooting-1.png" type="Texture" id=22]
+[ext_resource path="res://assets/images/prisma/shooting/PrismaShooting-2.png" type="Texture" id=23]
+[ext_resource path="res://assets/images/prisma/shooting/PrismaShooting-3.png" type="Texture" id=24]
+[ext_resource path="res://assets/images/prisma/shooting/PrismaShooting-4.png" type="Texture" id=25]
+[ext_resource path="res://assets/images/prisma/shooting/PrismaShooting-5.png" type="Texture" id=26]
+[ext_resource path="res://assets/images/prisma/shooting/PrismaShooting-6.png" type="Texture" id=27]
 
 [sub_resource type="SpriteFrames" id=2]
 
@@ -36,9 +39,14 @@ animations = [ {
 "frames": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ) ],
 "loop": true,
 "name": "running",
-"speed": 5.0
+"speed": 20.0
 }, {
-"frames": [ ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ) ],
+"frames": [ ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ) ],
+"loop": false,
+"name": "jumping",
+"speed": 3.0
+}, {
+"frames": [ ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ) ],
 "loop": false,
 "name": "shooting",
 "speed": 5.0
@@ -50,7 +58,7 @@ custom_solver_bias = 0.0
 radius = 90.7504
 height = 20.0
 
-[node name="Player" type="KinematicBody2D"]
+[node name="Player" type="KinematicBody2D" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -69,5 +77,9 @@ _sections_unfolded = [ "Transform" ]
 
 shape = SubResource( 3 )
 _sections_unfolded = [ "Transform" ]
+
+[node name="Foo" type="Node2D" parent="." index="2"]
+
+position = Vector2( 79.0071, 0 )
 
 

@@ -1,15 +1,17 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scenes/Wall.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/PaintPoint.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/Projectile.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=4]
 
-[node name="Node" type="Node" index="0"]
+[node name="Node" type="Node"]
 
 [node name="Wall" parent="." index="0" instance=ExtResource( 1 )]
 
 position = Vector2( 995.891, 464.31 )
 scale = Vector2( 0.127209, 1 )
+_sections_unfolded = [ "Collision" ]
 paint_point = NodePath("../PaintPoint")
 
 [node name="PaintPoint" parent="." index="1" instance=ExtResource( 2 )]
@@ -24,5 +26,12 @@ position = Vector2( 116.442, 243.081 )
 scale = Vector2( 0.292758, 0.119895 )
 _sections_unfolded = [ "Collision" ]
 speed = 150
+
+[node name="Floor" parent="." index="3" instance=ExtResource( 1 )]
+
+position = Vector2( 310.073, 557.686 )
+scale = Vector2( 3.42383, 0.378536 )
+
+[node name="Player" parent="." index="4" instance=ExtResource( 4 )]
 
 
