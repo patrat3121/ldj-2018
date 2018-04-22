@@ -1,6 +1,6 @@
 extends Area2D
 
-export(int) var speed = 50
+var speed = 5000
 export(int) var damage = 1
 export var color = "blue"
 
@@ -13,7 +13,8 @@ func _ready():
 
 func _process(delta):
 	var direction = Vector2(cos(rotation),sin(rotation))
-	position += delta * speed * direction
+	#position += delta * speed * direction
+	position += direction * delta * 150
 	$AnimatedSprite.play()
 
 func _on_area_entered(body):

@@ -12,7 +12,7 @@ const STOP_FORCE = 1300
 
 export var JUMP_SPEED = 300
 export var JUMP_MAX_AIRBORNE_TIME = 0.2
-export var SHOOT_LATENCY = 0.5
+export var SHOOT_LATENCY = 0.35
 
 const SLIDE_STOP_VELOCITY = 1.0 # one pixel/second
 const SLIDE_STOP_MIN_TRAVEL = 1.0 # one pixel
@@ -115,6 +115,10 @@ func shoot():
 	#TODO: Actually shoot projectile
 	var projectile = preload("res://scenes/Projectile.tscn")
 	var projectile_instance = projectile.instance()
+	var mouse = get_global_mouse_position()
+	var start = position
+	projectile_instance.rotation_degrees = -rad2deg((mouse-start).angle_to(Vector2(1,0)))
+	print(projectile_instance.rotation_degrees)
 	get_parent().add_child(projectile_instance)
 	projectile_instance.position = Vector2(self.position.x,self.position.y)
 	projectile_instance.color = "green"

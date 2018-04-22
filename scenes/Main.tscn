@@ -25,7 +25,6 @@ _sections_unfolded = [ "Collision", "Transform" ]
 position = Vector2( 116.442, 243.081 )
 scale = Vector2( 0.292758, 0.119895 )
 _sections_unfolded = [ "Collision", "Transform" ]
-speed = 400
 
 [node name="Floor" parent="." index="3" instance=ExtResource( 1 )]
 
@@ -33,5 +32,7 @@ position = Vector2( 310.073, 557.686 )
 scale = Vector2( 3.42383, 0.378536 )
 
 [node name="Player" parent="." index="4" instance=ExtResource( 4 )]
+
+SHOOT_LATENCY = 0.35
 
 

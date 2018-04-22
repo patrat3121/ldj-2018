@@ -28,7 +28,6 @@ angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
 script = ExtResource( 1 )
-speed = 1000
 damage = 1
 color = "blue"
 
