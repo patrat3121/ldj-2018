@@ -1,12 +1,22 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scripts/Projectile.gd" type="Script" id=1]
-[ext_resource path="res://assets/test.png" type="Texture" id=2]
+[ext_resource path="res://assets/images/projectile/Projectileprojectile-1.png" type="Texture" id=2]
+[ext_resource path="res://assets/images/projectile/Projectileprojectile-2.png" type="Texture" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 191.836, 129.821 )
+extents = Vector2( 9, 6 )
+
+[sub_resource type="SpriteFrames" id=2]
+
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
 
 [node name="Area2D" type="Area2D"]
 
@@ -18,16 +28,19 @@ angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
 script = ExtResource( 1 )
-speed = 50
+speed = 1000
+damage = 1
 color = "blue"
 
-[node name="test" type="Sprite" parent="." index="0"]
-
-texture = ExtResource( 2 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
 
 shape = SubResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="1"]
+
+frames = SubResource( 2 )
+animation = "default"
+_sections_unfolded = [ "Transform" ]
 
 

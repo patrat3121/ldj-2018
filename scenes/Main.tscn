@@ -11,7 +11,7 @@
 
 position = Vector2( 995.891, 464.31 )
 scale = Vector2( 0.127209, 1 )
-_sections_unfolded = [ "Collision" ]
+_sections_unfolded = [ "Collision", "Transform" ]
 paint_point = NodePath("../PaintPoint")
 
 [node name="PaintPoint" parent="." index="1" instance=ExtResource( 2 )]
@@ -24,9 +24,8 @@ _sections_unfolded = [ "Collision", "Transform" ]
 
 position = Vector2( 116.442, 243.081 )
 scale = Vector2( 0.292758, 0.119895 )
-_sections_unfolded = [ "Collision" ]
-speed = 150
-damage = 1
+_sections_unfolded = [ "Collision", "Transform" ]
+speed = 400
 
 [node name="Floor" parent="." index="3" instance=ExtResource( 1 )]
 

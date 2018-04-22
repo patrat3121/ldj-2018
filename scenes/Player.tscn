@@ -18,19 +18,19 @@
 [ext_resource path="res://assets/images/prisma/running/PrismaRunning-7.png" type="Texture" id=16]
 [ext_resource path="res://assets/images/prisma/running/PrismaRunning-8.png" type="Texture" id=17]
 [ext_resource path="res://assets/images/prisma/running/PrismaRunning-9.png" type="Texture" id=18]
-[ext_resource path="res://assets/images/prisma/shooting/PrismaShooting-1.png" type="Texture" id=19]
-[ext_resource path="res://assets/images/prisma/shooting/PrismaShooting-2.png" type="Texture" id=20]
-[ext_resource path="res://assets/images/prisma/shooting/PrismaShooting-3.png" type="Texture" id=21]
-[ext_resource path="res://assets/images/prisma/shooting/PrismaShooting-4.png" type="Texture" id=22]
-[ext_resource path="res://assets/images/prisma/shooting/PrismaShooting-5.png" type="Texture" id=23]
-[ext_resource path="res://assets/images/prisma/shooting/PrismaShooting-6.png" type="Texture" id=24]
-[ext_resource path="res://assets/images/prisma/death/PrismaDeath-1.png" type="Texture" id=25]
-[ext_resource path="res://assets/images/prisma/death/PrismaDeath-2.png" type="Texture" id=26]
-[ext_resource path="res://assets/images/prisma/jumping/PrismaJumping-1.png" type="Texture" id=27]
-[ext_resource path="res://assets/images/prisma/jumping/PrismaJumping-2.png" type="Texture" id=28]
-[ext_resource path="res://assets/images/prisma/jumping/PrismaJumping-3.png" type="Texture" id=29]
+[ext_resource path="res://assets/images/prisma/jumping/PrismaJumping-1.png" type="Texture" id=19]
+[ext_resource path="res://assets/images/prisma/jumping/PrismaJumping-2.png" type="Texture" id=20]
+[ext_resource path="res://assets/images/prisma/jumping/PrismaJumping-3.png" type="Texture" id=21]
+[ext_resource path="res://assets/images/prisma/shooting/PrismaShooting-1.png" type="Texture" id=22]
+[ext_resource path="res://assets/images/prisma/shooting/PrismaShooting-2.png" type="Texture" id=23]
+[ext_resource path="res://assets/images/prisma/shooting/PrismaShooting-3.png" type="Texture" id=24]
+[ext_resource path="res://assets/images/prisma/shooting/PrismaShooting-4.png" type="Texture" id=25]
+[ext_resource path="res://assets/images/prisma/shooting/PrismaShooting-5.png" type="Texture" id=26]
+[ext_resource path="res://assets/images/prisma/shooting/PrismaShooting-6.png" type="Texture" id=27]
+[ext_resource path="res://assets/images/prisma/death/PrismaDeath-1.png" type="Texture" id=28]
+[ext_resource path="res://assets/images/prisma/death/PrismaDeath-2.png" type="Texture" id=29]
 
-[sub_resource type="SpriteFrames" id=1]
+[sub_resource type="SpriteFrames" id=2]
 
 animations = [ {
 "frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ) ],
@@ -43,26 +43,26 @@ animations = [ {
 "name": "running",
 "speed": 20.0
 }, {
-"frames": [ ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ) ],
+"frames": [ ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ) ],
+"loop": false,
+"name": "jumping",
+"speed": 3.0
+}, {
+"frames": [ ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ) ],
 "loop": false,
 "name": "shooting",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 25 ), ExtResource( 26 ) ],
+"frames": [ ExtResource( 28 ), ExtResource( 29 ) ],
 "loop": false,
 "name": "death",
 "speed": 2.0
-}, {
-"frames": [ ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ) ],
-"loop": false,
-"name": "jumping",
-"speed": 3.0
 } ]
 
-[sub_resource type="CapsuleShape2D" id=2]
+[sub_resource type="CapsuleShape2D" id=3]
 
 custom_solver_bias = 0.0
-radius = 13.2575
+radius = 8.85165
 height = 20.0
 
 [node name="Player" type="KinematicBody2D"]
@@ -72,24 +72,30 @@ collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
-JUMP_SPEED = 270
+__meta__ = {
+"_edit_group_": true
+}
+JUMP_SPEED = 300
 JUMP_MAX_AIRBORNE_TIME = 0.2
-SHOOT_LATENCY = 1.5
+SHOOT_LATENCY = 0.5
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="." index="0"]
 
-frames = SubResource( 1 )
+frames = SubResource( 2 )
 animation = "idle"
 _sections_unfolded = [ "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
-shape = SubResource( 2 )
+position = Vector2( 2.68115, -0.553 )
+scale = Vector2( 1.22623, 0.902559 )
+shape = SubResource( 3 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Foo" type="Node2D" parent="." index="2"]
 
-position = Vector2( 40.7253, -1.62901 )
+position = Vector2( 79.0071, 0 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="Camera2D" type="Camera2D" parent="." index="3"]
 
@@ -97,7 +103,7 @@ anchor_mode = 1
 rotating = false
 current = true
 zoom = Vector2( 0.5, 0.5 )
-limit_left = -5007
+limit_left = -10000000
 limit_top = -10000000
 limit_right = 10000000
 limit_bottom = 10000000
@@ -115,6 +121,5 @@ drag_margin_bottom = 0.2
 editor_draw_screen = true
 editor_draw_limits = false
 editor_draw_drag_margin = false
-_sections_unfolded = [ "Editor", "Limit", "Offset" ]
 
 

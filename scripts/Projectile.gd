@@ -14,6 +14,11 @@ func _ready():
 func _process(delta):
 	var direction = Vector2(cos(rotation),sin(rotation))
 	position += delta * speed * direction
+	$AnimatedSprite.play()
 
 func _on_area_entered(body):
-	body.hit_by(self)
+	if body.has_method("hit_by"):
+		body.hit_by(self)
+
+func hit_by(body):
+	pass

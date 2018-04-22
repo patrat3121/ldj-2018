@@ -12,7 +12,7 @@ const STOP_FORCE = 1300
 
 export var JUMP_SPEED = 300
 export var JUMP_MAX_AIRBORNE_TIME = 0.2
-export var SHOOT_LATENCY = 1.5
+export var SHOOT_LATENCY = 0.5
 
 const SLIDE_STOP_VELOCITY = 1.0 # one pixel/second
 const SLIDE_STOP_MIN_TRAVEL = 1.0 # one pixel
@@ -113,14 +113,14 @@ func shoot():
 	print("Shot projectile")
 	time_since_last_shot = fmod(time_since_last_shot,SHOOT_LATENCY)
 	#TODO: Actually shoot projectile
-	var projectile = load("res://scenes/Projectile.tscn")
+	var projectile = preload("res://scenes/Projectile.tscn")
 	var projectile_instance = projectile.instance()
-	projectile_instance.position = Vector2(self.position.x+100,self.position.y)
+	get_parent().add_child(projectile_instance)
+	projectile_instance.position = Vector2(self.position.x,self.position.y)
 	projectile_instance.color = "green"
 	projectile_instance.speed = 50
 	projectile_instance.damage = 1
 	projectile_instance.show()
-	add_child(projectile_instance)
 	$AnimatedSprite.animation = "shooting"
 		
 func hit_by(body):
