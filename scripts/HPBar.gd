@@ -16,6 +16,8 @@ func setHealth(health):
 	
 	tileSize = ceil(rect_size.x/ totalHealth)
 	
+	update()
+	
 func _draw():
 	draw_rect(
 		Rect2(rect_position, rect_size),
@@ -47,5 +49,3 @@ func _draw():
 				Vector2(barStart + i*tileSize, rect_position.y + rect_size.y),
 				Color(0, 0, 0)
 			)
-			
-	print (iLength)
