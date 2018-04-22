@@ -16,11 +16,14 @@ func _ready():
 	
 func start(pos, health):
 	position = pos
-	color = health[0].name
-	$Sprite.modulate = Colors.COLORS[color]
-	collision_layer = 1 | Colors.COLORS_LAYER[color]
+	set_color(health[0].name)
 	self.health.init(health)
 	$Node2D/HPBar/HP.initHealth(self.health.health)
+	
+func set_color(color):
+	self.color = color
+	$Sprite.modulate = Colors.COLORS[color]
+	collision_layer = 1 | Colors.COLORS_LAYER[color]
 	
 func _physics_process(delta):
 	velocity.y += delta * GRAVITY 
@@ -34,10 +37,13 @@ func _physics_process(delta):
 		
 func hit_by(body):
 	health.push({ name = body.color, damage = body.damage})
+	
 	if health.is_dead():
 		hide()
 		queue_free()
 	else:
+		if health.health[0].name != color:
+			set_color(health.health[0].name)
 		$Node2D/HPBar/HP.setHealth(health.health)
 
 class StackHealthBar:

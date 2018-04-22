@@ -38,7 +38,8 @@ func _draw():
 	)
 
 	var iLength = 0
-	for color in health:
+	for c in range(health.size() - 1, -1, -1):
+		var color = health[c]
 		var barLength = color.value * tileSize
 		var barStart
 		if iLength > 0:
