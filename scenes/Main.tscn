@@ -4,7 +4,7 @@
 [ext_resource path="res://scenes/PaintPoint.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/Projectile.tscn" type="PackedScene" id=3]
 
-[node name="Node" type="Node" index="0"]
+[node name="Node" type="Node"]
 
 [node name="Wall" parent="." index="0" instance=ExtResource( 1 )]
 
@@ -24,5 +24,6 @@ position = Vector2( 116.442, 243.081 )
 scale = Vector2( 0.292758, 0.119895 )
 _sections_unfolded = [ "Collision" ]
 speed = 150
+damage = 1
 
 
