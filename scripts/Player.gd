@@ -9,7 +9,7 @@ const WALK_FORCE = 600
 const WALK_MIN_SPEED = 10
 const WALK_MAX_SPEED = 200
 const STOP_FORCE = 1300
-const JUMP_SPEED = 200
+const JUMP_SPEED = 300
 const JUMP_MAX_AIRBORNE_TIME = 0.2
 const SHOOT_LATENCY = 1.5
 
@@ -91,7 +91,6 @@ func _physics_process(delta):
 		shoot()
 
 func _process(delta):
-	#if abs(velocity.y)>10:
 	if alive:
 		if !is_on_floor():
 			$AnimatedSprite.animation = "jumping"
@@ -115,7 +114,11 @@ func shoot():
 	#TODO: Actually shoot projectile
 	var projectile = load("res://scenes/Projectile.tscn")
 	var projectile_instance = projectile.instance()
-	#projectile_instance.set_position
+	projectile_instance.position = Vector2(self.position.x+100,self.position.y)
+	projectile_instance.color = "green"
+	projectile_instance.speed = 50
+	projectile_instance.damage = 1
+	projectile_instance.show()
 	add_child(projectile_instance)
 	$AnimatedSprite.animation = "shooting"
 		
