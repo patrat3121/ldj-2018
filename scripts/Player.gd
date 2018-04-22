@@ -9,9 +9,10 @@ const WALK_FORCE = 600
 const WALK_MIN_SPEED = 10
 const WALK_MAX_SPEED = 200
 const STOP_FORCE = 1300
-const JUMP_SPEED = 300
-const JUMP_MAX_AIRBORNE_TIME = 0.2
-const SHOOT_LATENCY = 1.5
+
+export var JUMP_SPEED = 300
+export var JUMP_MAX_AIRBORNE_TIME = 0.2
+export var SHOOT_LATENCY = 1.5
 
 const SLIDE_STOP_VELOCITY = 1.0 # one pixel/second
 const SLIDE_STOP_MIN_TRAVEL = 1.0 # one pixel

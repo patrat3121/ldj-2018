@@ -1,0 +1,187 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://assets/tiles/grass-1.png" type="Texture" id=1]
+[ext_resource path="res://assets/tiles/grass-2.png" type="Texture" id=2]
+[ext_resource path="res://assets/tiles/edge-right.png" type="Texture" id=3]
+[ext_resource path="res://assets/tiles/edge-left.png" type="Texture" id=4]
+[ext_resource path="res://assets/tiles/rock-1.png" type="Texture" id=5]
+[ext_resource path="res://assets/tiles/artgeneral-kafe.png" type="Texture" id=6]
+[ext_resource path="res://assets/tiles/artleft-edge-kafe.png" type="Texture" id=7]
+[ext_resource path="res://assets/tiles/artright-edge-kafe.png" type="Texture" id=8]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 25, 25 )
+
+[node name="Node" type="Node"]
+
+[node name="grass-1" type="Sprite" parent="." index="0"]
+
+editor/display_folded = true
+position = Vector2( 25, 25 )
+texture = ExtResource( 1 )
+_sections_unfolded = [ "Region", "Transform" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="grass-1" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="grass-1/StaticBody2D" index="0"]
+
+shape = SubResource( 1 )
+
+[node name="grass-2" type="Sprite" parent="." index="1"]
+
+editor/display_folded = true
+position = Vector2( 25, 105 )
+texture = ExtResource( 2 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="grass-2" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="grass-2/StaticBody2D2" index="0"]
+
+shape = SubResource( 1 )
+
+[node name="edge-right" type="Sprite" parent="." index="2"]
+
+editor/display_folded = true
+position = Vector2( 96, 105 )
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="edge-right" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="edge-right/StaticBody2D3" index="0"]
+
+shape = SubResource( 1 )
+
+[node name="edge-left" type="Sprite" parent="." index="3"]
+
+editor/display_folded = true
+position = Vector2( 95, 25 )
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="edge-left" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="edge-left/StaticBody2D4" index="0"]
+
+shape = SubResource( 1 )
+
+[node name="rock-1" type="Sprite" parent="." index="4"]
+
+position = Vector2( 165, 105 )
+texture = ExtResource( 5 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="rock-1" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="rock-1/StaticBody2D5" index="0"]
+
+shape = SubResource( 1 )
+
+[node name="artgeneral-kafe" type="Sprite" parent="." index="5"]
+
+position = Vector2( 225, 105 )
+texture = ExtResource( 6 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="StaticBody2D6" type="StaticBody2D" parent="artgeneral-kafe" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="artgeneral-kafe/StaticBody2D6" index="0"]
+
+shape = SubResource( 1 )
+
+[node name="artleft-edge-kafe" type="Sprite" parent="." index="6"]
+
+position = Vector2( 155, 25 )
+texture = ExtResource( 7 )
+
+[node name="StaticBody2D7" type="StaticBody2D" parent="artleft-edge-kafe" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="artleft-edge-kafe/StaticBody2D7" index="0"]
+
+shape = SubResource( 1 )
+
+[node name="artright-edge-kafe" type="Sprite" parent="." index="7"]
+
+position = Vector2( 225, 25 )
+texture = ExtResource( 8 )
+
+[node name="StaticBody2D8" type="StaticBody2D" parent="artright-edge-kafe" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="artright-edge-kafe/StaticBody2D8" index="0"]
+
+shape = SubResource( 1 )
+
+

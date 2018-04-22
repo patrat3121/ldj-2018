@@ -11,7 +11,7 @@ config_version=3
 [application]
 
 config/name="LDJ2018"
-run/main_scene="res://scenes/Main.tscn"
+run/main_scene="res://levels/Level0.tscn"
 config/icon="res://icon.png"
 
 [input]
@@ -29,6 +29,4 @@ load_yellow=[ Object(InputEventKey,"resource_local_to_scene":false,"resource_nam
 load_red=[ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":50,"unicode":0,"echo":false,"script":null)
  ]
 load_blue=[ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":51,"unicode":0,"echo":false,"script":null)
- ]
-suicide=[ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777224,"unicode":0,"echo":false,"script":null)
  ]
