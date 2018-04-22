@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/pass_through.wav-f30824935377e638cb0f0a0a3704045f.sample"
+
+[deps]
+
+source_file="res://assets/sfx/pass_through.wav"
+source_md5="a70eb82948123c3a9ea31b0e3cc1ae0f"
+
+dest_files=[ "res://.import/pass_through.wav-f30824935377e638cb0f0a0a3704045f.sample" ]
+dest_md5="77d7b2d361a4f2a46ce3e92626cb3386"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
