@@ -8,6 +8,7 @@ var colors = preload("res://scripts/Colors.gd")
 func _ready():
 	modulate = colors.COLORS[color]
 	connect("area_entered",self,"_on_area_entered")
+	connect("body_entered",self,"_on_area_entered")
 
 func _process(delta):
 	var direction = Vector2(cos(rotation),sin(rotation))

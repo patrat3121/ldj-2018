@@ -16,4 +16,9 @@ func change_color(color):
 	current_color = color
 	
 func hit_by(body):
-	change_color(body.color)
+	if(colors.is_contained(body.color,current_color)):
+		var resulting = colors.subtract(body.color,self.current_color)
+		if(resulting.size() > 0):
+			body.modulate = colors.COLORS[resulting[0]]
+	else:
+		body.queue_free()

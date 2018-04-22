@@ -22,5 +22,6 @@ static func is_contained(one,two):
 	return CONTAINED[one].has(two)
 	
 static func subtract(one,two):
-	var color = CONTAINED[one]
-	return color.remove(color.find_last(two))
+	var color = CONTAINED[one].duplicate()
+	color.remove(color.find_last(two))
+	return color
