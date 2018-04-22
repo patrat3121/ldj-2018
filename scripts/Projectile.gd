@@ -1,6 +1,7 @@
 extends Area2D
 
 export(int) var speed = 50
+export(int) var damage = 1
 export var color = "blue"
 
 var colors = preload("res://scripts/Colors.gd")

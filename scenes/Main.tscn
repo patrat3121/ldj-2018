@@ -26,6 +26,7 @@ position = Vector2( 116.442, 243.081 )
 scale = Vector2( 0.292758, 0.119895 )
 _sections_unfolded = [ "Collision" ]
 speed = 150
+damage = 1
 
 [node name="Floor" parent="." index="3" instance=ExtResource( 1 )]
 
