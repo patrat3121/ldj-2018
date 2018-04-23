@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/meelee_bad-guyArtboard-1.png-152ca39af1356cf6a7b09a102afee378.stex"
+path="res://.import/ranged_bad-guyArtboard-1.png-043ed86f48944aa43eb56efb775e1769.stex"
 
 [deps]
 
-source_file="res://scenes/meelee_bad-guyArtboard-1.png"
-source_md5="f06960d6d51088cb1e2282fb44d2d92d"
+source_file="res://assets/images/bad_guy/ranged/ranged_bad-guyArtboard-1.png"
+source_md5="79e13ab0e797d4c0d432c4aee7c4d7ad"
 
-dest_files=[ "res://.import/meelee_bad-guyArtboard-1.png-152ca39af1356cf6a7b09a102afee378.stex" ]
-dest_md5="ed2570097ed781fed2a3defbf2d0dc9f"
+dest_files=[ "res://.import/ranged_bad-guyArtboard-1.png-043ed86f48944aa43eb56efb775e1769.stex" ]
+dest_md5="83be841f76242ca08466e5ac4c6e5697"
 
 [params]
 

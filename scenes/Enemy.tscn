@@ -1,8 +1,11 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scripts/Enemy.gd" type="Script" id=1]
-[ext_resource path="res://assets/images/meelee_bad-guyArtboard-1.png" type="Texture" id=2]
+[ext_resource path="res://assets/images/bad_guy/melee/melee_bad-guyArtboard-1.png" type="Texture" id=2]
 [ext_resource path="res://scenes/HPBar.tscn" type="PackedScene" id=3]
+
+
+
 
 [sub_resource type="CapsuleShape2D" id=1]
 

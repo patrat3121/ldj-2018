@@ -122,15 +122,12 @@ func run():
 	pass
 
 func shoot():
-	print("Shot projectile")
 	time_since_last_shot = fmod(time_since_last_shot,SHOOT_LATENCY)
-	#TODO: Actually shoot projectile
 	var projectile = preload("res://scenes/Projectile.tscn")
 	var projectile_instance = projectile.instance()
 	var mouse = get_global_mouse_position()
 	var start = position
 	projectile_instance.rotation_degrees = -rad2deg((mouse-start).angle_to(Vector2(1,0)))
-	print(projectile_instance.rotation_degrees)
 	get_parent().add_child(projectile_instance)
 	projectile_instance.position = Vector2(self.position.x,self.position.y)
 	projectile_instance.speed = 50
