@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Projectileprojectile-1.png-424a0aed6a28a8195a33f4397d0ca506.stex"
+path="res://.import/Projectile-2-reversed.png-1e3d7af9869e3570b2485acb59b45d8e.stex"
 
 [deps]
 
-source_file="res://assets/images/projectile/Projectileprojectile-1.png"
-source_md5="b06094d731be37f6d563b6ae89c05feb"
+source_file="res://assets/images/projectile/Projectile-2-reversed.png"
+source_md5="e45a6548629d724b88d95ee872bfcd17"
 
-dest_files=[ "res://.import/Projectileprojectile-1.png-424a0aed6a28a8195a33f4397d0ca506.stex" ]
-dest_md5="42394e7cdc84bb81817ea2e6c0efed4e"
+dest_files=[ "res://.import/Projectile-2-reversed.png-1e3d7af9869e3570b2485acb59b45d8e.stex" ]
+dest_md5="cd7664b4f44ff48099d7b285d9d3690c"
 
 [params]
 
