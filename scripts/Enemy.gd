@@ -25,17 +25,22 @@ func set_color(color):
 	$Sprite.modulate = Colors.COLORS[color]
 	collision_layer = 1 | Colors.COLORS_LAYER[color]
 	
+func physicsLogic(delta):
+	pass
+	
+func logic(delta):
+	pass
+	
+func _process(delta):
+	logic(delta)
+	
 func _physics_process(delta):
-	velocity.y += delta * GRAVITY 
-	velocity.x = direction * speed
-	
-	move_and_slide(velocity, Vector2(0, -1))
-	$Sprite.flip_h = velocity.x > 0
-	
-	if is_on_wall():
-		direction = direction * -1
+	logic(delta)
 		
 func hit_by(body):
+	if body.type == "enemy_projectile":
+		return
+	
 	health.push({ name = body.color, damage = body.damage})
 	
 	if health.is_dead():

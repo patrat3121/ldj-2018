@@ -11,7 +11,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 600, 30 )
 
-[node name="Scene" type="Node2D"]
+[node name="Scene" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
@@ -46,6 +46,7 @@ position = Vector2( 25.1754, 506.024 )
 
 [node name="Area2D" type="Area2D" parent="." index="2"]
 
+editor/display_folded = true
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -65,5 +66,13 @@ _sections_unfolded = [ "Transform" ]
 [node name="Node2D" type="Node2D" parent="." index="3"]
 
 position = Vector2( 52.2578, 431.695 )
+
+[node name="EnemySpawn" type="Position2D" parent="." index="4"]
+
+position = Vector2( 120.092, 509.923 )
+
+[node name="EnemySpawn2" type="Position2D" parent="." index="5"]
+
+position = Vector2( 883.785, 313.734 )
 
 

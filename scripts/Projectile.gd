@@ -1,5 +1,6 @@
 extends Area2D
 
+var type = "player_projectile"
 var speed = 5000
 export(int) var damage = 1
 export var color = "blue"

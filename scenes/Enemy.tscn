@@ -9,7 +9,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10.2883 )
 
-[node name="Enemy" type="KinematicBody2D" index="0"]
+[node name="Enemy" type="KinematicBody2D"]
 
 input_pickable = false
 collision_layer = 0
@@ -18,7 +18,7 @@ collision/safe_margin = 0.08
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision", "Transform", "collision" ]
 __meta__ = {
-"_edit_lock_": true
+"_edit_group_": true
 }
 speed = 125
 color = "red"
