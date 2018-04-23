@@ -16,6 +16,8 @@ export var SHOOT_LATENCY = 0.35
 
 const SLIDE_STOP_VELOCITY = 1.0 # one pixel/second
 const SLIDE_STOP_MIN_TRAVEL = 1.0 # one pixel
+const BUTTON_DISABLED_COLOR = Color(.7,.7,.7,.7)
+const BUTTON_ENABLED_COLOR = Color(1,1,1,1)
 
 var velocity = Vector2()
 var looks_right = true	#orientation player is facing. Also, code is just looking right so far
@@ -27,6 +29,18 @@ var alive = true
 var shot_color = "red"
 var prev_jump_pressed = false
 var colors = preload("res://scripts/Colors.gd")
+
+var chosen_colors = []
+var color_nodes = {}
+
+func _ready():
+	$CanvasLayer/HBoxContainer/red.modulate = BUTTON_DISABLED_COLOR
+	$CanvasLayer/HBoxContainer/blue.modulate = BUTTON_DISABLED_COLOR
+	$CanvasLayer/HBoxContainer/yellow.modulate = BUTTON_DISABLED_COLOR
+	
+func _enter_tree():
+	for color in ["red", "blue", "yellow"]:
+		color_nodes[color] = get_node("CanvasLayer/HBoxContainer/" + color)
 
 func _physics_process(delta):
 	if !alive:
@@ -97,11 +111,22 @@ func _physics_process(delta):
 		shoot()
 		
 	if chose_red:
-		shot_color = "red"
+		select_color("red")
 	if chose_blue:
-		shot_color = "blue"
+		select_color("blue")
 	if chose_yellow:
-		shot_color = "yellow"
+		select_color("yellow")
+
+func select_color(color):
+	var cIndex = chosen_colors.find(color)
+	
+	if cIndex == -1:
+		color_nodes[color].modulate = BUTTON_ENABLED_COLOR
+		chosen_colors.push_back(color)
+	else:
+		color_nodes[color].modulate = BUTTON_DISABLED_COLOR
+		chosen_colors.remove(cIndex)
+	
 
 func _process(delta):
 	if alive:
@@ -121,12 +146,20 @@ func _process(delta):
 func run():
 	pass
 
+func get_shot_color():
+	return colors.get_shot_color(chosen_colors)
+
 func shoot():
 	time_since_last_shot = fmod(time_since_last_shot,SHOOT_LATENCY)
 	var projectile = preload("res://scenes/Projectile.tscn")
 	var projectile_instance = projectile.instance()
 	var mouse = get_global_mouse_position()
 	var start = position
+	var shot_color = get_shot_color()
+	
+	if shot_color == null:
+		return
+	
 	projectile_instance.rotation_degrees = -rad2deg((mouse-start).angle_to(Vector2(1,0)))
 	get_parent().add_child(projectile_instance)
 	projectile_instance.position = Vector2(self.position.x,self.position.y)

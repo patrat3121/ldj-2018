@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://assets/images/prisma/idle/PrismaIdle-2.png" type="Texture" id=2]
@@ -7,28 +7,31 @@
 [ext_resource path="res://assets/images/prisma/jumping/PrismaJumping-1.png" type="Texture" id=5]
 [ext_resource path="res://assets/images/prisma/jumping/PrismaJumping-2.png" type="Texture" id=6]
 [ext_resource path="res://assets/images/prisma/jumping/PrismaJumping-3.png" type="Texture" id=7]
-[ext_resource path="res://assets/images/prisma/running/PrismaRunning-1.png" type="Texture" id=8]
-[ext_resource path="res://assets/images/prisma/running/PrismaRunning-10.png" type="Texture" id=9]
-[ext_resource path="res://assets/images/prisma/running/PrismaRunning-11.png" type="Texture" id=10]
-[ext_resource path="res://assets/images/prisma/running/PrismaRunning-12.png" type="Texture" id=11]
-[ext_resource path="res://assets/images/prisma/running/PrismaRunning-13.png" type="Texture" id=12]
-[ext_resource path="res://assets/images/prisma/running/PrismaRunning-14.png" type="Texture" id=13]
-[ext_resource path="res://assets/images/prisma/running/PrismaRunning-2.png" type="Texture" id=14]
-[ext_resource path="res://assets/images/prisma/running/PrismaRunning-3.png" type="Texture" id=15]
-[ext_resource path="res://assets/images/prisma/running/PrismaRunning-4.png" type="Texture" id=16]
-[ext_resource path="res://assets/images/prisma/running/PrismaRunning-5.png" type="Texture" id=17]
-[ext_resource path="res://assets/images/prisma/running/PrismaRunning-6.png" type="Texture" id=18]
-[ext_resource path="res://assets/images/prisma/running/PrismaRunning-7.png" type="Texture" id=19]
-[ext_resource path="res://assets/images/prisma/running/PrismaRunning-8.png" type="Texture" id=20]
-[ext_resource path="res://assets/images/prisma/running/PrismaRunning-9.png" type="Texture" id=21]
-[ext_resource path="res://assets/images/prisma/shooting/PrismaShooting-1.png" type="Texture" id=22]
-[ext_resource path="res://assets/images/prisma/shooting/PrismaShooting-2.png" type="Texture" id=23]
-[ext_resource path="res://assets/images/prisma/shooting/PrismaShooting-3.png" type="Texture" id=24]
-[ext_resource path="res://assets/images/prisma/shooting/PrismaShooting-4.png" type="Texture" id=25]
-[ext_resource path="res://assets/images/prisma/shooting/PrismaShooting-5.png" type="Texture" id=26]
-[ext_resource path="res://assets/images/prisma/shooting/PrismaShooting-6.png" type="Texture" id=27]
-[ext_resource path="res://assets/images/prisma/death/PrismaDeath-1.png" type="Texture" id=28]
-[ext_resource path="res://assets/images/prisma/death/PrismaDeath-2.png" type="Texture" id=29]
+[ext_resource path="res://assets/images/prisma/death/PrismaDeath-1.png" type="Texture" id=8]
+[ext_resource path="res://assets/images/prisma/death/PrismaDeath-2.png" type="Texture" id=9]
+[ext_resource path="res://assets/images/prisma/shooting/PrismaShooting-1.png" type="Texture" id=10]
+[ext_resource path="res://assets/images/prisma/shooting/PrismaShooting-2.png" type="Texture" id=11]
+[ext_resource path="res://assets/images/prisma/shooting/PrismaShooting-3.png" type="Texture" id=12]
+[ext_resource path="res://assets/images/prisma/shooting/PrismaShooting-4.png" type="Texture" id=13]
+[ext_resource path="res://assets/images/prisma/shooting/PrismaShooting-5.png" type="Texture" id=14]
+[ext_resource path="res://assets/images/prisma/shooting/PrismaShooting-6.png" type="Texture" id=15]
+[ext_resource path="res://assets/images/prisma/running/PrismaRunning-1.png" type="Texture" id=16]
+[ext_resource path="res://assets/images/prisma/running/PrismaRunning-10.png" type="Texture" id=17]
+[ext_resource path="res://assets/images/prisma/running/PrismaRunning-11.png" type="Texture" id=18]
+[ext_resource path="res://assets/images/prisma/running/PrismaRunning-12.png" type="Texture" id=19]
+[ext_resource path="res://assets/images/prisma/running/PrismaRunning-13.png" type="Texture" id=20]
+[ext_resource path="res://assets/images/prisma/running/PrismaRunning-14.png" type="Texture" id=21]
+[ext_resource path="res://assets/images/prisma/running/PrismaRunning-2.png" type="Texture" id=22]
+[ext_resource path="res://assets/images/prisma/running/PrismaRunning-3.png" type="Texture" id=23]
+[ext_resource path="res://assets/images/prisma/running/PrismaRunning-4.png" type="Texture" id=24]
+[ext_resource path="res://assets/images/prisma/running/PrismaRunning-5.png" type="Texture" id=25]
+[ext_resource path="res://assets/images/prisma/running/PrismaRunning-6.png" type="Texture" id=26]
+[ext_resource path="res://assets/images/prisma/running/PrismaRunning-7.png" type="Texture" id=27]
+[ext_resource path="res://assets/images/prisma/running/PrismaRunning-8.png" type="Texture" id=28]
+[ext_resource path="res://assets/images/prisma/running/PrismaRunning-9.png" type="Texture" id=29]
+[ext_resource path="res://assets/hud/buttonsbutton_1.png" type="Texture" id=30]
+[ext_resource path="res://assets/hud/buttonsbutton_2.png" type="Texture" id=31]
+[ext_resource path="res://assets/hud/buttonsbutton_3.png" type="Texture" id=32]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -43,20 +46,20 @@ animations = [ {
 "name": "jumping",
 "speed": 3.0
 }, {
-"frames": [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ) ],
-"loop": true,
-"name": "running",
-"speed": 20.0
+"frames": [ ExtResource( 8 ), ExtResource( 9 ) ],
+"loop": false,
+"name": "death",
+"speed": 2.0
 }, {
-"frames": [ ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ) ],
+"frames": [ ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ) ],
 "loop": false,
 "name": "shooting",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 28 ), ExtResource( 29 ) ],
-"loop": false,
-"name": "death",
-"speed": 2.0
+"frames": [ ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ) ],
+"loop": true,
+"name": "running",
+"speed": 20.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
@@ -64,16 +67,16 @@ animations = [ {
 custom_solver_bias = 0.0
 extents = Vector2( 10, 21.5122 )
 
-[node name="Player" type="KinematicBody2D"]
+[sub_resource type="Theme" id=3]
+
+
+[node name="Player" type="KinematicBody2D" index="0"]
 
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_group_": true
-}
 JUMP_SPEED = 300
 JUMP_MAX_AIRBORNE_TIME = 0.2
 SHOOT_LATENCY = 0.35
@@ -82,7 +85,7 @@ SHOOT_LATENCY = 0.35
 
 frames = SubResource( 1 )
 animation = "idle"
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
@@ -121,5 +124,85 @@ drag_margin_bottom = 0.2
 editor_draw_screen = true
 editor_draw_limits = false
 editor_draw_drag_margin = false
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." index="4"]
+
+layer = 1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer" index="0"]
+
+anchor_left = 0.0
+anchor_top = 1.0
+anchor_right = 0.0
+anchor_bottom = 1.0
+margin_top = -40.0
+margin_right = 40.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 0
+_sections_unfolded = [ "Anchor" ]
+
+[node name="yellow" type="TextureRect" parent="CanvasLayer/HBoxContainer" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 40.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 30 )
+stretch_mode = 0
+
+[node name="blue" type="TextureRect" parent="CanvasLayer/HBoxContainer" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 44.0
+margin_right = 84.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 31 )
+stretch_mode = 0
+
+[node name="red" type="TextureRect" parent="CanvasLayer/HBoxContainer" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 88.0
+margin_right = 128.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+theme = SubResource( 3 )
+texture = ExtResource( 32 )
+stretch_mode = 0
+_sections_unfolded = [ "Anchor", "Theme" ]
 
 

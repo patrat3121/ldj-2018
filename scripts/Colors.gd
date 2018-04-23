@@ -34,3 +34,21 @@ static func subtract(one,two):
 	var color = CONTAINED[one].duplicate()
 	color.remove(color.find_last(two))
 	return color
+
+static func get_shot_color(colors):
+	if colors.size() == 1:
+		return colors[0]
+	
+	for color in CONTAINED:
+		var res = true
+		
+		if CONTAINED[color].size() == 1:
+			continue
+		
+		for sub_color in CONTAINED[color]:
+			if not colors.has(sub_color):
+				res = false
+				break
+				
+		if res == true:
+			return color
