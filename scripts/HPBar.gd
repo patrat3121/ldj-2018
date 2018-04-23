@@ -32,23 +32,22 @@ func _setHealth(health, init):
 	update()
 	
 func _draw():
+	#Draw background
 	draw_rect(
 		Rect2(rect_position, rect_size),
 		Color(.4,.4,.4)
 	)
-
+	
 	var iLength = 0
-	for c in range(health.size() - 1, -1, -1):
+	
+	#Draw colored rectangles
+	for c in range(health.size() -1,-1,-1):
 		var color = health[c]
 		var barLength = color.value * tileSize
-		var barStart
-		if iLength > 0:
-			barStart = iLength
-		else: 
-			barStart = 0 
-			
+		var barStart = iLength
+
 		iLength += barLength 
-	
+
 		draw_rect(
 			Rect2(
 				rect_position + Vector2(barStart, 0), 
@@ -56,10 +55,11 @@ func _draw():
 			),
 			Colors.COLORS[color.name]
 		)
-		
-		for i in range(1, color.value):
-			draw_line(
-				Vector2(barStart + i*tileSize, rect_position.y),
-				Vector2(barStart + i*tileSize, rect_position.y + rect_size.y),
-				Color(0, 0, 0)
-			)
+	
+	#Draw separators
+		for i in range(1, totalHealth):
+        draw_line(
+            Vector2(rect_position.x + i*tileSize, rect_position.y),
+            Vector2(rect_position.x + i*tileSize, rect_position.y + rect_size.y),
+            Color(0, 0, 0)
+        )

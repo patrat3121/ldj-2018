@@ -37,14 +37,14 @@ shape = SubResource( 1 )
 
 [node name="Node2D" type="Node2D" parent="." index="2"]
 
-position = Vector2( 0, -100 )
+position = Vector2( -40, -50 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="HPBar" parent="Node2D" index="0" instance=ExtResource( 3 )]
 
-margin_left = -157.0
+margin_left = -32.0
 margin_top = -32.0
-margin_right = 93.0
-margin_bottom = 18.0
+margin_right = 43.0
+margin_bottom = -12.0
 
 

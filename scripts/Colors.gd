@@ -2,7 +2,7 @@ extends Object
 
 const COLORS = {
 	"red" : Color(1,0,0),
-	"blue": Color(0,0,1),
+	"blue": Color(0,0,.7),
 	"yellow" : Color(1,1,0),
 	"green" : Color(0,1,0),
 	"purple" : Color(1,0,1),

@@ -41,8 +41,8 @@ func _enter_tree():
 	
 func addEnemy(enemy):
 	var iEnemy = getEnemyInstance(enemy.type)
-	iEnemy.start(enemy.spawn, enemy.health)
 	add_child(iEnemy)
+	iEnemy.start(enemy.spawn, enemy.health)
 
 func getEnemyInstance(type):
 	match type:
