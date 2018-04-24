@@ -69,10 +69,11 @@ position = Vector2( 52.2578, 431.695 )
 
 [node name="EnemySpawn" type="Position2D" parent="." index="4"]
 
-position = Vector2( 120.092, 509.923 )
+position = Vector2( 298.787, 421.478 )
 
 [node name="EnemySpawn2" type="Position2D" parent="." index="5"]
 
-position = Vector2( 883.785, 313.734 )
+position = Vector2( 903.632, 325.495 )
+_sections_unfolded = [ "Transform" ]
 
 
